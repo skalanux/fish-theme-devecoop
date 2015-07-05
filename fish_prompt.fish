@@ -65,6 +65,5 @@ function fish_prompt
     # Display current path
     echo -n -s $bg_cyan " $cwd " $normal
 
-    # Terminate with a space
     echo -n -s ' ' $normal
 end

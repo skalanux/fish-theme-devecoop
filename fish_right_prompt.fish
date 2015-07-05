@@ -41,6 +41,4 @@ function fish_right_prompt
     end
 
 
-    # Terminate with a space
-    echo -n -s ' ' $normal
 end
