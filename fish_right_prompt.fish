@@ -33,9 +33,9 @@ function fish_right_prompt
     if [ (_git_branch_name) ]
         set -l git_branch (_git_branch_name)
         if [ (_is_git_dirty) ]
-            echo -n -s $bg_white $magenta " $git_branch " $red "$__oceanfish_glyph_flag " $normal
+            echo -n -s $magenta " $git_branch " $red "$__oceanfish_glyph_flag " $normal
         else
-            echo -n -s $bg_white $magenta " $git_branch " $normal
+            echo -n -s $magenta " $git_branch " $normal
         end
     end
 
