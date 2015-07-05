@@ -10,7 +10,7 @@ set __oceanfish_glyph_anchor \u27a4
 set __oceanfish_glyph_flag \u2691
 set __oceanfish_glyph_radioactive \u2622
 set __devecoop_glyph_git_no_dirty \u2713
-set __devecoop_glyph_git_dirty \u274c
+set __devecoop_glyph_git_dirty \u2613
 
 function _git_branch_name
     echo (command git symbolic-ref HEAD ^/dev/null | sed -e 's|^refs/heads/||')

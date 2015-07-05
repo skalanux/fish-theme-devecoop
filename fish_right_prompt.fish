@@ -36,7 +36,7 @@ function fish_right_prompt
         if [ (_is_git_dirty) ]
             echo -n -s $magenta " $git_branch " $red "$__devecoop_glyph_git_dirty " $normal
         else
-            echo -n -s $magenta " $git_branch " $normal "$__devecoop_glyph_git_no_dirty"
+            echo -n -s $magenta " $git_branch " $normal "$__devecoop_glyph_git_no_dirty " $normal
         end
     end
 
