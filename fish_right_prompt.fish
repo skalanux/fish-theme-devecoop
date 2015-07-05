@@ -31,7 +31,7 @@ function fish_right_prompt
 
     # Show git branch and dirty state
     if [ (_git_branch_name) ]
-        echo -n -s '  '
+        echo -n -s ''
         set -l git_branch (_git_branch_name)
         if [ (_is_git_dirty) ]
             echo -n -s $magenta " $git_branch " $red "$__oceanfish_glyph_flag " $normal
