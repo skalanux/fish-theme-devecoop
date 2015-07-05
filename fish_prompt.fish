@@ -26,6 +26,9 @@ function fish_prompt
     set -l last_status $status
     set -l fuxia (set_color d33682)
     set -l red (set_color red)
+    set -l green (set_color green)
+    set -l grisoscuro (set_color 32322f)
+    set -l bg_grisoscuro (set_color -b 32322f)
     set -l lila (set_color 6c71c4)
     set -l white (set_color white)
     set -l black (set_color black)
@@ -66,6 +69,6 @@ function fish_prompt
     end
 
     # Display current path
-    echo -n -s $bg_lila " $cwd " $bg_normal
-    echo -n -s $lila ' ' $normal
+    echo -n -s $bg_grisoscuro $green " $cwd " $bg_normal
+    echo -n -s $grisoscuro ' ' $normal
 end
