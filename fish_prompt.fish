@@ -51,7 +51,7 @@ function fish_prompt
 
     # Show a nice anchor (turns red if previous command failed)
     if test $last_status -ne 0
-        echo -n -s $bg_red $white " $__oceanfish_glyph_anchor "  $normal
+        echo -n -s $bg_red $white " $__oceanfish_glyph_anchor "  $normal
     else
         echo -n -s $bg_blue $white " $__oceanfish_glyph_anchor " $normal
     end
