@@ -3,8 +3,8 @@
 
 
 ## Set this options in your config.fish (if you want to)
-# set -g theme_display_user yes
-# set -g default_user default_username
+set -g theme_display_user yes
+set -g default_user default_username
 
 set __oceanfish_glyph_anchor \u2693
 set __oceanfish_glyph_flag \u2691
@@ -64,18 +64,6 @@ function fish_prompt
 
     # Display current path
     echo -n -s $bg_cyan " $cwd " $normal
-
-
-    # Show git branch and dirty state
-    if [ (_git_branch_name) ]
-        set -l git_branch (_git_branch_name)
-        if [ (_is_git_dirty) ]
-            echo -n -s $bg_white $magenta " $git_branch " $red "$__oceanfish_glyph_flag " $normal
-        else
-            echo -n -s $bg_white $magenta " $git_branch " $normal
-        end
-    end
-
 
     # Terminate with a space
     echo -n -s ' ' $normal
