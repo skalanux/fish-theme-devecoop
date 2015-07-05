@@ -3,10 +3,10 @@
 
 
 ## Set this options in your config.fish (if you want to)
-set -g theme_display_user yes
-set -g default_user default_username
+#set -g theme_display_user yes
+#set -g default_user default_username
 
-set __oceanfish_glyph_anchor \u2693
+set __oceanfish_glyph_anchor \u27a4
 set __oceanfish_glyph_flag \u2691
 set __oceanfish_glyph_radioactive \u2622
 
@@ -22,17 +22,18 @@ end
 
 function fish_prompt
     set -l last_status $status
-    set -l magenta (set_color magenta)
+    set -l fuxia (set_color d33682)
     set -l red (set_color red)
-    set -l cyan (set_color cyan)
+    set -l lila (set_color 6c71c4)
     set -l white (set_color white)
     set -l black (set_color black)
     set -l bg_blue (set_color -b blue)
-    set -l bg_cyan (set_color -b cyan)
+    set -l bg_lila (set_color -b 6c71c4)
     set -l bg_white (set_color -b white)
     set -l bg_red (set_color -b red)
     set -l bg_yellow (set_color -b yellow)
     set -l normal (set_color normal)
+    set -l bg_normal (set_color -b normal)
     set -l cwd $white(prompt_pwd)
     set -l uid (id -u $USER)
 
@@ -51,7 +52,7 @@ function fish_prompt
 
     # Show a nice anchor (turns red if previous command failed)
     if test $last_status -ne 0
-        echo -n -s $bg_red $white " $__oceanfish_glyph_anchor "  $normal
+        echo -n -s $bg_red $white " $__oceanfish_glyph_anchor "  $normal
     else
         echo -n -s $bg_blue $white " $__oceanfish_glyph_anchor " $normal
     end
@@ -63,7 +64,6 @@ function fish_prompt
     end
 
     # Display current path
-    echo -n -s $bg_cyan " $cwd " $normal
-
-    echo -n -s ' ' $normal
+    echo -n -s $bg_lila " $cwd " $bg_normal
+    echo -n -s $lila ' ' $normal
 end
