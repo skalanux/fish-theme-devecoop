@@ -33,6 +33,7 @@ function fish_prompt
     set -l white (set_color white)
     set -l black (set_color black)
     set -l bg_blue (set_color -b blue)
+    set -l blue (set_color blue)
     set -l bg_lila (set_color -b 6c71c4)
     set -l bg_white (set_color -b white)
     set -l bg_red (set_color -b red)
@@ -50,24 +51,21 @@ function fish_prompt
 
     # Display virtualenv name if in a virtualenv
     if set -q VIRTUAL_ENV
-        echo ''
+        echo '' $normal
     end
+
 
 
     # Show a nice anchor (turns red if previous command failed)
     if test $last_status -ne 0
-        echo -n -s $bg_red $white " $__oceanfish_glyph_anchor "  $normal
+        echo -n -s $bg_red $white "＄"  $bg_grisoscuro $red  $normal
     else
-        echo -n -s $bg_blue $white " $__oceanfish_glyph_anchor " $normal
+        echo -n -s $bg_blue $white "＄" $bg_grisoscuro $blue  $normal
+
     end
 
-    if [ "$theme_display_user" = "yes" ]
-        if [ "$USER" != "$default_user" -o -n "$SSH_CLIENT" ]
-            echo -n -s $bg_white $cyan " " (whoami) "@" (hostname -s) " " $normal
-        end
-    end
 
     # Display current path
-    echo -n -s $bg_grisoscuro $green " $cwd " $bg_normal
+    echo -n -s $bg_grisoscuro $green "$cwd " $bg_normal
     echo -n -s $grisoscuro ' ' $normal
 end
