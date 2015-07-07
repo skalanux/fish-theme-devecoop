@@ -39,9 +39,8 @@ function fish_prompt
     set -l bg_yellow (set_color -b yellow)
     set -l normal (set_color normal)
     set -l bg_normal (set_color -b normal)
-    set -l cwd $white(prompt_pwd)
+    set -l cwd $white (basename $PWD)
     set -l uid (id -u $USER)
-
 
     # Show a yellow radioactive symbol for root privileges
     if [ $uid -eq 0 ]
@@ -51,7 +50,7 @@ function fish_prompt
 
     # Display virtualenv name if in a virtualenv
     if set -q VIRTUAL_ENV
-        echo -n -s $bg_cyan $black " " (basename "$VIRTUAL_ENV") " " $normal
+        echo ''
     end
 
 
