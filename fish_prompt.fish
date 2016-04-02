@@ -38,6 +38,7 @@ function fish_prompt
     set -l bg_white (set_color -b white)
     set -l bg_red (set_color -b red)
     set -l bg_yellow (set_color -b yellow)
+    set -l yellow (set_color yellow)
     set -l normal (set_color normal)
     set -l bg_normal (set_color -b normal)
     set -l cwd $white (basename $PWD)
@@ -58,9 +59,9 @@ function fish_prompt
 
     # Show a nice anchor (turns red if previous command failed)
     if test $last_status -ne 0
-        echo -n -s $bg_red $white "＄"  $bg_grisoscuro $red  $normal
+        echo -n -s $bg_red $white "\$ "  $bg_grisoscuro $red  $normal
     else
-        echo -n -s $bg_blue $white "＄" $bg_grisoscuro $blue  $normal
+        echo -n -s $bg_white "\$ " $bg_grisoscuro $white  $normal
 
     end
 
