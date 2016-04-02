@@ -49,6 +49,7 @@ function fish_prompt
         echo -n -s $bg_yellow $black " $__oceanfish_glyph_radioactive " $normal
     end
 
+    set cwd (prompt_pwd)
 
     # Display virtualenv name if in a virtualenv
     if set -q VIRTUAL_ENV
@@ -59,14 +60,15 @@ function fish_prompt
 
     # Show a nice anchor (turns red if previous command failed)
     if test $last_status -ne 0
-        echo -n -s $bg_red $white "\$ "  $bg_grisoscuro $red  $normal
+        echo -n -s $bg_red $white "\$"  $bg_grisoscuro   $normal
     else
-        echo -n -s $bg_white "\$ " $bg_grisoscuro $white  $normal
+        echo -n -s $bg_grisoscuro "\$" $bg_grisoscuro   $normal
 
     end
 
 
     # Display current path
-    echo -n -s $bg_grisoscuro $green "$cwd " $bg_normal
-    echo -n -s $grisoscuro ' ' $normal
+    #echo -n -s $bg_grisoscuro $green $cwd $bg_normal
+    echo -n -s $bg_grisoscuro $green $cwd $bg_normal
+    echo -n -s $grisoscuro '' $normal
 end
